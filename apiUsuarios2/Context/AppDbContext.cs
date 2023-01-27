@@ -14,5 +14,6 @@ namespace APIFactElect.Context
 
         }
         public DbSet<Usuarios> usuarios { get; set; }
+        public DbSet<APIFactElect.Models.Personas> Personas { get; set; }
     }
 }
