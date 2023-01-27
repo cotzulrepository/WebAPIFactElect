@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,12 +12,25 @@ namespace APIFactElect.Models
     public class Usuarios
     {
         [Key]
-        public int id { get; set; }
-        public string apellido_paterno { get; set; }
-        public string apellido_materno { get; set; }
-        public string nombre { get; set; }
-        public string correo { get; set; }
+        public long codigo { get; set; }
+        [Required]
         public string username { get; set; }
+        [Required]
         public string password { get; set; }
+        public long personacodigo { get; set; }
+        [Required]
+        public long usuarioing { get; set; }
+        [Required]
+        public DateTime fechaing { get; set; }
+        [AllowNull]
+        public Nullable<long>  usuariomod { get; set; }
+        [AllowNull]
+        public Nullable<DateTime>  fechamod { get; set; }
+        [AllowNull]
+        public Nullable<long> usuarioelim { get; set; }
+        [AllowNull]
+        public Nullable<DateTime> fechaelim { get; set; }
+        [Required]
+        public string estado { get; set; }
     }
 }

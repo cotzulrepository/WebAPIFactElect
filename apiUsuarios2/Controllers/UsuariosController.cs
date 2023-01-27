@@ -48,7 +48,7 @@ namespace APIFactElect.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutUsuarios(int id, Usuarios usuarios)
         {
-            if (id != usuarios.id)
+            if (id != usuarios.codigo)
             {
                 return BadRequest();
             }
@@ -83,7 +83,7 @@ namespace APIFactElect.Controllers
             _context.usuarios.Add(usuarios);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetUsuarios", new { id = usuarios.id }, usuarios);
+            return CreatedAtAction("GetUsuarios", new { id = usuarios.codigo }, usuarios);
         }
 
         // DELETE: api/Usuarios/5
@@ -117,7 +117,7 @@ namespace APIFactElect.Controllers
 
         private bool UsuariosExists(int id)
         {
-            return _context.usuarios.Any(e => e.id == id);
+            return _context.usuarios.Any(e => e.codigo == id);
         }
     }
 }
