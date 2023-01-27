@@ -17,5 +17,8 @@ namespace APIFactElect.Context
         public DbSet<APIFactElect.Models.Personas> Personas { get; set; }
         public DbSet<APIFactElect.Models.Clientes> Clientes { get; set; }
         public DbSet<APIFactElect.Models.Companias> Companias { get; set; }
+        public DbSet<APIFactElect.Models.Establecimientos> Establecimientos { get; set; }
+        public DbSet<APIFactElect.Models.Parametros> Parametros { get; set; }
+        public DbSet<APIFactElect.Models.Productos> Productos { get; set; }
     }
 }
